@@ -1,0 +1,5 @@
+&dos
+outdir = '../tmp',
+prefix = 'qa',
+fildos = 'qa.dos',
+/

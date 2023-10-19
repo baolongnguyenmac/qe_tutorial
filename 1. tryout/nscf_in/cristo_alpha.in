@@ -1,7 +1,7 @@
 &CONTROL
   calculation='nscf'
   restart_mode='from_scratch'
-  prefix='nscf.ca'
+  prefix='ca'
   outdir='../tmp'
   pseudo_dir='./pp'
 /

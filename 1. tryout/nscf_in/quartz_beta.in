@@ -1,7 +1,7 @@
 &CONTROL
   calculation='nscf'
   restart_mode='from_scratch'
-  prefix='nscf.qb'
+  prefix='qb'
   outdir='../tmp'
   pseudo_dir='./pp'
 /

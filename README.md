@@ -23,9 +23,9 @@ flowchart LR
 
     cell["`Cell-format`"]
 
-    SCF["`Chạy pw.x cho **SCF calculation** để lấy total energy (energy phải hội tụ)`"]
+    SCF["`Chạy pw.x cho **SCF calculation** để lấy total energy (energy phải hội tụ). Ứng với quá trình làm bột`"]
 
-    NSCF["`Chạy pw.x cho **NSCF calculation** để có được DOS và dispersion diagram (DOS và dispersion diagram phải hợp lệ)`"]
+    NSCF["`Chạy pw.x cho **NSCF calculation** để có được DOS và dispersion diagram (DOS và dispersion diagram phải hợp lệ). Nướng thử tin-bread`"]
 
     cif --> cell --> SCF --> NSCF
 ```
@@ -72,5 +72,7 @@ flowchart LR
 - `outdir`, theo mô tả của Prof. Maezono, được dùng như "bread dough". Dữ liệu trong này sẽ được đem đi phân tích, để đi đến kết luận xem có xài được chưa. Tiếp đến sẽ là làm thử "tin bread", rồi cuối cùng mới là "fancy bread". Thông thường, lượng dữ liệu này rất lớn. Do đó, sau khi phân tích xong, sẽ chỉ giữ lại `scf.in` và `scf.out`.
 
 - Sau khi có được `scf.out`, cần phải quick check để xem cái file input này có xài được không. Quick check bằng cách quan sát năng lượng toàn phần có hội tụ hay không. Để ý rằng sau mỗi vòng lặp, năng lượng toàn phần sẽ được ghi lại bên trong file này. Chỉ cần plot đống năng lượng đó ra là có thể quick check dễ dàng về việc hội tụ
-    - Ta sẽ sử dụng lệnh `grep 'total energy' scf.out | sed 's/!//g'| awk '{print $4}' > tmp && sed '$d' tmp > e.scf.txt` để lọc ra các giá trị năng lượng và lưu vào file `e.scf.txt`. Lưu ý rằng việc lọc này có thể làm thủ công hoặc bán tự động, nhưng thực sự không nên vì một vài vật liệu có thể chạy cả trăm iterations.
+    - Ta sẽ sử dụng lệnh `grep 'total energy' scf.out | sed 's/!//g'| awk '{print $4}' > tmp && sed '$d' tmp > scf.en` để lọc ra các giá trị năng lượng và lưu vào file `scf.en`. Lưu ý rằng việc lọc này có thể làm thủ công hoặc bán tự động, nhưng thực sự không nên vì một vài vật liệu có thể chạy cả trăm iterations.
     - Sau khi lọc xong, ta sẽ thu được 1 file text chứa các giá trị năng lượng trên mỗi dòng. Lúc này chỉ cần sử dụng Python (chưa code) hoặc Gnuplot (`plot 'e.quartz_alpha.txt' pointsize 3 pointtype 4, 'e.quartz_alpha.txt' with line`) để print out cái biểu đồ.
+
+
