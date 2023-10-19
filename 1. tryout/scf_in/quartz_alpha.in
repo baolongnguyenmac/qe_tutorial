@@ -2,7 +2,7 @@
   calculation='scf'
   restart_mode='from_scratch'
   prefix='qa'
-  outdir='../tmp'
+  outdir='../out_qa'
   pseudo_dir='./pp'
 /
 

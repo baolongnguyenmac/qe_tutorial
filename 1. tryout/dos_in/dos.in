@@ -1,5 +1,5 @@
-&dos
-outdir = '../tmp',
-prefix = 'qa',
-fildos = 'qa.dos',
+&DOS
+    outdir = '../out_qa',
+    prefix = 'qa',
+    fildos = 'qa.dos'
 /

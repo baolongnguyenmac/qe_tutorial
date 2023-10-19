@@ -2,7 +2,7 @@
   calculation='nscf'
   restart_mode='from_scratch'
   prefix='ca'
-  outdir='../tmp'
+  outdir='../out_qa'
   pseudo_dir='./pp'
 /
 
